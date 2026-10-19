@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-function App() {
+
+function App(props) {
   const [stars, setStars] = useState(0);
   const [downloads, setDownloads] = useState(0);
   const [issues, setIssues] = useState(5);
@@ -38,7 +39,7 @@ function App() {
       <header className="px-20 pt-8 text-center">
         <h2 className="text-7xl font-bold">Build pages faster.</h2>
         <p className="mt-5 text-2xl text-[#000000]">An open-source component kit for React.</p>
-        <p className="mt-2 text-xl text-[#000000]">Made by YOUR NAME</p>
+        <p className="mt-2 text-xl text-[#000000]"> {props.author} </p>
       </header>
 
       <div className="flex justify-center gap-4 py-6">
@@ -71,15 +72,15 @@ function App() {
       <div className="flex justify-center gap-6 pb-8">
         <div className="w-48 rounded-xl bg-[#F3E6D5] py-4 text-center">
           <p className="text-4xl font-bold">{stars}</p>
-          <p className="mt-1 text-lg text-[#000000]">Stars</p>
+          <p className="mt-1 text-lg text-[#000000]">{props.stars} Stars</p>
         </div>
         <div className="w-48 rounded-xl bg-[#F3E6D5] py-4 text-center">
           <p className="text-4xl font-bold">{downloads}</p>
-          <p className="mt-1 text-lg text-[#000000]">Downloads</p>
+          <p className="mt-1 text-lg text-[#000000]">{props.downloads} Downloads </p>
         </div>
         <div className="w-48 rounded-xl bg-[#F3E6D5] py-4 text-center">
           <p className="text-4xl font-bold">{issues}</p>
-          <p className="mt-1 text-lg text-[#000000]">Issues reported</p>
+          <p className="mt-1 text-lg text-[#000000]">{props.issues} Issues</p>
         </div>
       </div>
 
@@ -100,10 +101,10 @@ function App() {
         </div>
         <div className="rounded-xl bg-[#F3E6D5] p-6">
           <span className="rounded-full bg-[#800020] px-4 py-1 text-base font-bold text-[#FFF9F2]">
-            Simple
+            {props.tag} Simple
           </span>
-          <h3 className="mt-8 text-3xl font-bold">Easy to learn</h3>
-          <p className="mt-3 text-xl text-[#000000]">Every component takes a few plain props.</p>
+          <h3 className="mt-8 text-3xl font-bold">{props.title} Easy to learn</h3>
+          <p className="mt-3 text-xl text-[#000000]">{props.description} Every component takes a few plain props.</p>
         </div>
       </main>
 
